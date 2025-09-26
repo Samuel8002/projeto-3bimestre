@@ -1,0 +1,396 @@
+type: collection.insomnia.rest/5.0
+name: Marketplace API - 3º Bimestre
+meta:
+  id: wrk_6bb8dac91f8647e59575bf9acdc6db55
+  created: 1758844373362
+  modified: 1758910032749
+  description: ""
+collection:
+  - url: "{{ _.base_url }}/"
+    name: Health Check
+    meta:
+      id: req_4108126550014fb6b20e7ba60fc94d7c
+      created: 1695600000000
+      modified: 1758910032729
+      isPrivate: false
+      description: Verificar se a API está online
+      sortKey: -1695600000000
+    method: GET
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - name: 📦 Products
+    meta:
+      id: fld_b6ab364782e149cf837a6adb27603513
+      created: 1695600000000
+      modified: 1758910032713
+      sortKey: -1695598000000
+      description: Operações com produtos
+    children:
+      - url: "{{ _.base_url }}/products/1"
+        name: Buscar Produto por ID
+        meta:
+          id: req_2590494f43134daaa10625cd825ead4b
+          created: 1695600000000
+          modified: 1758910032724
+          isPrivate: false
+          description: Buscar produto específico com loja e usuário
+          sortKey: -1695598000000
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/products"
+        name: Listar Produtos
+        meta:
+          id: req_317942e64f634cdcbb36a2e44e660a1b
+          created: 1695600000000
+          modified: 1758910032727
+          isPrivate: false
+          description: Listar todos os produtos com loja e usuário
+          sortKey: -1695599000000
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/products/1"
+        name: Deletar Produto
+        meta:
+          id: req_4f7803526c5340b586deed5b559ec5c8
+          created: 1695600000000
+          modified: 1758910032731
+          isPrivate: false
+          description: Deletar produto específico
+          sortKey: -1695596000000
+        method: DELETE
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/products"
+        name: Criar Produto
+        meta:
+          id: req_ba953b8039f34eeb9a0a437543d5c861
+          created: 1695600000000
+          modified: 1758910032739
+          isPrivate: false
+          description: Criar um novo produto vinculado à loja
+          sortKey: -1695600000000
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "name": "Smartphone Samsung",
+              "price": 899.99,
+              "storeId": 1
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/products/1"
+        name: Atualizar Produto
+        meta:
+          id: req_fb502e0d53c844798d5cb63888a2cedb
+          created: 1695600000000
+          modified: 1758910032748
+          isPrivate: false
+          description: Atualizar dados do produto
+          sortKey: -1695597000000
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "name": "iPhone 15 Pro",
+              "price": 1299.99
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: 🏪 Stores
+    meta:
+      id: fld_fa926087ba03428688a5f5b7093e375b
+      created: 1695600000000
+      modified: 1758910032715
+      sortKey: -1695599000000
+      description: Operações com lojas
+    children:
+      - url: "{{ _.base_url }}/stores/1"
+        name: Atualizar Loja
+        meta:
+          id: req_00a2a7e4a27a4a739d1c69dbf807e5f8
+          created: 1695600000000
+          modified: 1758910032720
+          isPrivate: false
+          description: Atualizar nome da loja
+          sortKey: -1695597000000
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "name": "Loja do João - Atualizada"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/stores/1"
+        name: Buscar Loja por ID
+        meta:
+          id: req_2141a0902c0f404b9ff7c1f952993dda
+          created: 1695600000000
+          modified: 1758910032723
+          isPrivate: false
+          description: Buscar loja específica com usuário e produtos
+          sortKey: -1695598000000
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/stores"
+        name: Criar Loja
+        meta:
+          id: req_67e8eb41b711410f8ccefe0459bc111f
+          created: 1695600000000
+          modified: 1758910032733
+          isPrivate: false
+          description: Criar uma nova loja vinculada ao usuário
+          sortKey: -1695600000000
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "name": "Loja do João",
+              "userId": 2
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/stores/1"
+        name: Deletar Loja
+        meta:
+          id: req_6ceda2efdc114cb4bb6b756088356198
+          created: 1695600000000
+          modified: 1758910032735
+          isPrivate: false
+          description: "Deletar loja (cuidado: deleta produtos também)"
+          sortKey: -1695596000000
+        method: DELETE
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/stores"
+        name: Listar Lojas
+        meta:
+          id: req_b7e2246e3f694219a8cb238154812df0
+          created: 1695600000000
+          modified: 1758910032737
+          isPrivate: false
+          description: Listar todas as lojas com usuários e produtos
+          sortKey: -1695599000000
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: 👤 Users
+    meta:
+      id: fld_fdcc3ce989534e31a50ec2d55bc22bc7
+      created: 1695600000000
+      modified: 1758910032718
+      sortKey: -1695600000000
+      description: Operações com usuários
+    children:
+      - url: "{{ _.base_url }}/usuarios"
+        name: Criar Usuário
+        meta:
+          id: req_70a23a9d0fb243dbbd1bff1d9c5008f8
+          created: 1695600000000
+          modified: 1758910032736
+          isPrivate: false
+          description: Criar um novo usuário
+          sortKey: -1695600000000
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "name": "João Silva",
+              "email": "joao@example.com",
+              "password": "123456"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/usuarios/2"
+        name: Buscar Usuário por ID
+        meta:
+          id: req_ca17a63222da4f298310b7816ceab3d1
+          created: 1695600000000
+          modified: 1758910032740
+          isPrivate: false
+          description: Buscar usuário específico com loja e produtos
+          sortKey: -1695598000000
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/usuarios/2"
+        name: Atualizar Usuário
+        meta:
+          id: req_f65a7b8abeaa41529ff1d672a5b257d0
+          created: 1695600000000
+          modified: 1758910032741
+          isPrivate: false
+          description: Atualizar dados do usuário
+          sortKey: -1695597000000
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "name": "João Silva Santos",
+              "email": "joao.santos@example.com"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/usuarios/1"
+        name: Deletar Usuário
+        meta:
+          id: req_f69e5b6b53af4c828a03c513d452cb00
+          created: 1695600000000
+          modified: 1758910032744
+          isPrivate: false
+          description: "Deletar usuário (cuidado: deleta loja e produtos também)"
+          sortKey: -1695596000000
+        method: DELETE
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/usuarios"
+        name: Listar Usuários
+        meta:
+          id: req_f8f588f0f8bc4994b2d713e313c83d05
+          created: 1695600000000
+          modified: 1758910032746
+          isPrivate: false
+          description: Listar todos os usuários
+          sortKey: -1695599000000
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_28d555983c6a4336287bf5749d5fa7eba1d4600c
+    created: 1758910032835
+    modified: 1758910032835
+environments:
+  name: Base Environment
+  meta:
+    id: env_fe1bb5b78c584f11b79d4916b38c7f89
+    created: 1695600000000
+    modified: 1758910032705
+    isPrivate: false
+  data:
+    base_url: http://localhost:3000
