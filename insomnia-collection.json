@@ -1,0 +1,391 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2025-09-25T00:00:00.000Z",
+  "__export_source": "insomnia.desktop.app:v2023.5.8",
+  "resources": [
+    {
+      "_id": "req_health_check",
+      "parentId": "wrk_marketplace",
+      "modified": 1695600000000,
+      "created": 1695600000000,
+      "url": "{{ _.base_url }}/",
+      "name": "Health Check",
+      "description": "Verificar se a API está online",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1695600000000,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_create_user",
+      "parentId": "fld_users",
+      "modified": 1695600000000,
+      "created": 1695600000000,
+      "url": "{{ _.base_url }}/usuarios",
+      "name": "Criar Usuário",
+      "description": "Criar um novo usuário",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"João Silva\",\n  \"email\": \"joao@example.com\",\n  \"password\": \"123456\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1695600000000,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_list_users",
+      "parentId": "fld_users",
+      "modified": 1695600000000,
+      "created": 1695600000000,
+      "url": "{{ _.base_url }}/usuarios",
+      "name": "Listar Usuários",
+      "description": "Listar todos os usuários",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1695599000000,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_user",
+      "parentId": "fld_users",
+      "modified": 1695600000000,
+      "created": 1695600000000,
+      "url": "{{ _.base_url }}/usuarios/1",
+      "name": "Buscar Usuário por ID",
+      "description": "Buscar usuário específico com loja e produtos",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1695598000000,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_update_user",
+      "parentId": "fld_users",
+      "modified": 1695600000000,
+      "created": 1695600000000,
+      "url": "{{ _.base_url }}/usuarios/1",
+      "name": "Atualizar Usuário",
+      "description": "Atualizar dados do usuário",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"João Silva Santos\",\n  \"email\": \"joao.santos@example.com\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1695597000000,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_delete_user",
+      "parentId": "fld_users",
+      "modified": 1695600000000,
+      "created": 1695600000000,
+      "url": "{{ _.base_url }}/usuarios/1",
+      "name": "Deletar Usuário",
+      "description": "Deletar usuário (cuidado: deleta loja e produtos também)",
+      "method": "DELETE",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1695596000000,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_create_store",
+      "parentId": "fld_stores",
+      "modified": 1695600000000,
+      "created": 1695600000000,
+      "url": "{{ _.base_url }}/stores",
+      "name": "Criar Loja",
+      "description": "Criar uma nova loja vinculada ao usuário",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"Loja do João\",\n  \"userId\": 1\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1695600000000,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_list_stores",
+      "parentId": "fld_stores",
+      "modified": 1695600000000,
+      "created": 1695600000000,
+      "url": "{{ _.base_url }}/stores",
+      "name": "Listar Lojas",
+      "description": "Listar todas as lojas com usuários e produtos",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1695599000000,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_store",
+      "parentId": "fld_stores",
+      "modified": 1695600000000,
+      "created": 1695600000000,
+      "url": "{{ _.base_url }}/stores/1",
+      "name": "Buscar Loja por ID",
+      "description": "Buscar loja específica com usuário e produtos",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1695598000000,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_update_store",
+      "parentId": "fld_stores",
+      "modified": 1695600000000,
+      "created": 1695600000000,
+      "url": "{{ _.base_url }}/stores/1",
+      "name": "Atualizar Loja",
+      "description": "Atualizar nome da loja",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"Loja do João - Atualizada\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1695597000000,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_delete_store",
+      "parentId": "fld_stores",
+      "modified": 1695600000000,
+      "created": 1695600000000,
+      "url": "{{ _.base_url }}/stores/1",
+      "name": "Deletar Loja",
+      "description": "Deletar loja (cuidado: deleta produtos também)",
+      "method": "DELETE",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1695596000000,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_create_product",
+      "parentId": "fld_products",
+      "modified": 1695600000000,
+      "created": 1695600000000,
+      "url": "{{ _.base_url }}/products",
+      "name": "Criar Produto",
+      "description": "Criar um novo produto vinculado à loja",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"Smartphone Samsung\",\n  \"price\": 899.99,\n  \"storeId\": 1\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1695600000000,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_list_products",
+      "parentId": "fld_products",
+      "modified": 1695600000000,
+      "created": 1695600000000,
+      "url": "{{ _.base_url }}/products",
+      "name": "Listar Produtos",
+      "description": "Listar todos os produtos com loja e usuário",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1695599000000,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_product",
+      "parentId": "fld_products",
+      "modified": 1695600000000,
+      "created": 1695600000000,
+      "url": "{{ _.base_url }}/products/1",
+      "name": "Buscar Produto por ID",
+      "description": "Buscar produto específico com loja e usuário",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1695598000000,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_update_product",
+      "parentId": "fld_products",
+      "modified": 1695600000000,
+      "created": 1695600000000,
+      "url": "{{ _.base_url }}/products/1",
+      "name": "Atualizar Produto",
+      "description": "Atualizar dados do produto",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"iPhone 15 Pro\",\n  \"price\": 1299.99\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1695597000000,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "req_delete_product",
+      "parentId": "fld_products",
+      "modified": 1695600000000,
+      "created": 1695600000000,
+      "url": "{{ _.base_url }}/products/1",
+      "name": "Deletar Produto",
+      "description": "Deletar produto específico",
+      "method": "DELETE",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1695596000000,
+      "isPrivate": false,
+      "_type": "request"
+    },
+    {
+      "_id": "fld_users",
+      "parentId": "wrk_marketplace",
+      "modified": 1695600000000,
+      "created": 1695600000000,
+      "name": "👤 Users",
+      "description": "Operações com usuários",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1695600000000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_stores",
+      "parentId": "wrk_marketplace",
+      "modified": 1695600000000,
+      "created": 1695600000000,
+      "name": "🏪 Stores",
+      "description": "Operações com lojas",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1695599000000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_products",
+      "parentId": "wrk_marketplace",
+      "modified": 1695600000000,
+      "created": 1695600000000,
+      "name": "📦 Products",
+      "description": "Operações com produtos",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1695598000000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_marketplace",
+      "parentId": null,
+      "modified": 1695600000000,
+      "created": 1695600000000,
+      "name": "Marketplace API - 3º Bimestre",
+      "description": "API completa do marketplace com Users, Stores e Products",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "env_base",
+      "parentId": "wrk_marketplace",
+      "modified": 1695600000000,
+      "created": 1695600000000,
+      "name": "Base Environment",
+      "data": {
+        "base_url": "http://localhost:3000"
+      },
+      "dataPropertyOrder": {
+        "&": ["base_url"]
+      },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1695600000000,
+      "_type": "environment"
+    }
+  ]
+}
